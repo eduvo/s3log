@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "s3log/version"
-require "s3log/cli"
+require "bundler"
+require_relative "../lib/s3log"
 
 S3log::Cli.start

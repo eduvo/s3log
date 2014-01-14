@@ -1,9 +1,8 @@
 require "thor"
-require "s3log"
 
 module S3log
 
-  class Cli < thor
+  class Cli < Thor
     include Thor::Actions
 
     default_task :help
