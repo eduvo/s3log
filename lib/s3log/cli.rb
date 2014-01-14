@@ -11,8 +11,12 @@ module S3log
     def download
     end
 
-    desc "agglomerate", "Gather daily logs in a single file"
+    desc "agglomerate", "Gather daily logs in a single file."
     def agglomerate
+    end
+
+    desc "schedule", "Install cronjob for S3 logs download and agglomeration."
+    def schedule
     end
 
   end
