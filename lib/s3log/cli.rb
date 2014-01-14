@@ -5,7 +5,16 @@ module S3log
   class Cli < Thor
     include Thor::Actions
 
+    def self.source_root
+      File.expand_path("../../../templates", __FILE__)
+    end
+
     default_task :help
+
+    desc "init", "Creates a s3log dir with default config files."
+    def init(name="s3log")
+      directory "s3log", name
+    end
 
     desc "download", "Downloads and delete logs from the logging S3 bucket."
     def download

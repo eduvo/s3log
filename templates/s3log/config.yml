@@ -1,0 +1,5 @@
+---
+awspublic: xxx
+awsprivate: xxx
+freshlogs_dir: ./freshlogs
+dailylogs_dir: ./dailylogs
