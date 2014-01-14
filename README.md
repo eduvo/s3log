@@ -6,16 +6,6 @@ Downloader for aws S3 logs and agglomerator.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 's3log'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install s3log
 
 ## Usage
