@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "s3log/version"
+require "s3log/cli"
+
+S3log::Cli.start
