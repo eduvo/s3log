@@ -21,9 +21,16 @@ module S3log
       directory "s3log", name
     end
 
-    desc "status", "Checks how many log files are waiting on the S3 bucket."
-    def status
+    desc "list", "Lists log files that are waiting on the S3 bucket."
+    def list
       @s3log = S3log::Runner.new(options[:configfile])
+      @s3log.list
+    end
+
+    desc "buckets", "List available buckets."
+    def buckets
+      @s3log = S3log::Runner.new(options[:configfile])
+      @s3log.buckets
     end
 
     desc "download", "Downloads and delete logs from the logging S3 bucket."

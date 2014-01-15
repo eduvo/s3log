@@ -11,10 +11,19 @@ module S3log
         secret_access_key: @config['awsprivate']
       )
       @bucket = @s3.buckets[@config['bucket']]
-      
+      @prefix = @config['prefix']
     end
 
     def list
+      @bucket.objects.with_prefix(@prefix).each do |o|
+        puts o.key
+      end
+    end
+
+    def buckets
+      @s3.buckets.each do |bucket|
+        puts bucket.name
+      end
     end
 
   end
