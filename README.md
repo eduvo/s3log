@@ -9,7 +9,7 @@ On S3 buckets you can activate logging, but the options are quite limited. You c
 
 S3log script is intended to transform this logging in a unified logfile wherever you need it, removing the logfiles from the logging bucket when they are downloaded.
 
-It's designed to run on debian/ubuntu servers but should work on any linux server, and it also work on mac osx.
+It's designed to run on debian/ubuntu servers but should work on any linux server, and it also work on mac osx. It works with ruby 1.9 and 2.0 (but not 1.8).
 
 (work in progress, not ready for use yet).
 
