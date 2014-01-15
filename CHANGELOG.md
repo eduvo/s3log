@@ -1,7 +1,7 @@
 S3log Changelog
 -------------------
 
-### v0.0.4 - wip
+### v0.0.4 - 2014-01-15
 
 * fix cron line for jobs when config file is specified on commandline
 * add jobname in log when same s3log is used with different configs
