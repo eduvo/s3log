@@ -53,6 +53,7 @@ In all s3log commands if you don't specify the config file with `-c`, it will us
 Here is how it is supposed to work:
 
 * first install s3log, init a dir, tune up config file
+* for my rails app I configure the s3.log output file to shared/log/ so it gets rotated like all other log files and backed up as well
 * launch a first download to grab all the files
 * it will download each file, append their content to the outputfile, then delete the downloaded file from the bucket
 * launch the schedule command to setup the cronjob, I like it every 5 minutes but it can be every minute if you want a real-time feeling
