@@ -11,7 +11,7 @@ S3log script is intended to transform this logging in a unified logfile wherever
 
 It's designed to run on debian/ubuntu servers but should work on any linux server, and it also work on mac osx. It works with ruby 1.9 and 2.0 (but not 1.8).
 
-(work in progress, not ready for use yet).
+(work in progress, not ready for use yet, check the [Changelog](CHANGELOG.md)).
 
 ## Installation
 
