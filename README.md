@@ -1,5 +1,8 @@
 # S3log
 
+[![Gem Version](https://badge.fury.io/rb/s3log.png)](http://rubygems.org/gems/s3log)
+[![Dependency Status](https://gemnasium.com/eduvo/s3log.png)](https://gemnasium.com/eduvo/s3log)
+
 Downloader for aws S3 logs and agglomerator.
 
 On S3 buckets you can activate logging, but the options are quite limited. You can point the logging to another bucket in the same region only and logging will generate a lot of small logging files, and will not delete them. It's not very convenient for debugging.
