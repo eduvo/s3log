@@ -2,6 +2,6 @@
 awspublic: xxx
 awsprivate: xxx
 bucket: bucketname # no s3:// prefix, just the name
-prefix: "kb" # the same as prefix stated in logging interface for the logged bucket
-freshlogs_dir: ./freshlogs
-dailylogs_dir: ./dailylogs
+prefix: "somedir/prefix_" # the same as prefix stated in logging interface for the logged bucket
+tmpdir: tmp
+logfile: s3.log

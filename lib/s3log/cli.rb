@@ -24,7 +24,9 @@ module S3log
     desc "list", "Lists log files that are waiting on the S3 bucket."
     def list
       @s3log = S3log::Runner.new(options[:configfile])
-      @s3log.list
+      @s3log.items.each do |o|
+        puts o
+      end
     end
 
     desc "buckets", "List available buckets."
@@ -36,6 +38,7 @@ module S3log
     desc "download", "Downloads and delete logs from the logging S3 bucket."
     def download
       @s3log = S3log::Runner.new(options[:configfile])
+      @s3log.download
     end
 
     desc "agglomerate", "Gather daily logs in a single file."
