@@ -35,7 +35,7 @@ First you need to edit the config.yml file. The purpose is to have one config fi
 * logdir: the local dir where s3log logs are kept
 * loglevel: the level of logging. use warn for only error display, info to record info on operations, debug to have much more details
 * outputfile: the faile where the downloaded logs are going to be appended
-* schedule: the cron formatted frequency of downloading the logs from bucket ie. `0/5 * * * *`
+* schedule: the cron formatted frequency of downloading the logs from bucket ie. `*/5 * * * *`
 
 When your configuration is ready, veridy that it works with
 

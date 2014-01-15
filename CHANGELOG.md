@@ -1,9 +1,9 @@
 S3log Changelog
 -------------------
 
-### v0.0.3 - wip
+### v0.0.3 - 2014-01-15
 
-* refix on crontab scheduling
+* refix on crontab scheduling for good this time
 
 ### v0.0.2 - 2014-01-15
 
