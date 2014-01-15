@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler"
-require_relative "../lib/s3log"
+require "s3log"
 
 S3log::Cli.start
