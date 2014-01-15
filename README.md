@@ -50,6 +50,17 @@ Then you can update the user crontab for each config file.
 The `schedule` command will update the user crontab, that you can verify with `crontab -l`.
 In all s3log commands if you don't specify the config file with `-c`, it will use `config.yml`.
 
+Here is how it is supposed to work:
+
+* first install s3log, init a dir, tune up config file
+* launch a first download to grab all the files
+* it will download each file, append their content to the outputfile, then delete the downloaded file from the bucket
+* launch the schedule command to setup the cronjob, I like it every 5 minutes but it can be every minute if you want a real-time feeling
+* the subsequent downloads take 1 or 2s in my case
+* turn loglevel to debug for a while to verify that all goes according to the plan
+* turn loglevel back to info or warn depending to your need
+* go have a coffee and do something useful with your life
+
 ## Contributing
 
 1. Fork it
