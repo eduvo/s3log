@@ -40,12 +40,12 @@ First you need to edit the config.yml file. The purpose is to have one config fi
 When your configuration is ready, veridy that it works with
 
     s3log list
-    s3log -c another_config.yml schecule
+    s3log list -c another_config.yml
 
 Then you can update the user crontab for each config file.
 
     s3log schedule
-    s3log -c another_config.yml schedule
+    s3log schedule -c another_config.yml
 
 The `schedule` command will update the user crontab, that you can verify with `crontab -l`.
 In all s3log commands if you don't specify the config file with `-c`, it will use `config.yml`.
