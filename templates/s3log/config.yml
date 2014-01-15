@@ -3,5 +3,6 @@ awspublic: xxx
 awsprivate: xxx
 bucket: bucketname # no s3:// prefix, just the name
 prefix: "somedir/prefix_" # the same as prefix stated in logging interface for the logged bucket
-tmpdir: tmp
-logfile: s3.log
+logdir: logs
+loglevel: info
+outputfile: s3.log
