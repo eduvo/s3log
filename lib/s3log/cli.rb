@@ -15,7 +15,7 @@ module S3log
       banner: "PATH",
       default: File.expand_path("config.yml", Dir.pwd),
       desc: "Path to the configuration file to use"
-      
+
     desc "init", "Creates a s3log dir with default config files."
     def init(name="s3log")
       directory "s3log", name
@@ -23,6 +23,7 @@ module S3log
 
     desc "download", "Downloads and delete logs from the logging S3 bucket."
     def download
+      @s3log = S3log.new(configfile)
     end
 
     desc "agglomerate", "Gather daily logs in a single file."
