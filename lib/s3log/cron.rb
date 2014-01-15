@@ -4,7 +4,7 @@ module S3log
     def initialize(configfile)
       @configfile = configfile
       @config = YAML::load_file(configfile)
-      @path = File.dirname(configfile)
+      @path = File.dirname(File.expand_path(configfile))
       @jobname = @config['jobname']
       @schedule = @config['schedule']
       @logdir = @config['logdir']
@@ -27,9 +27,9 @@ module S3log
       tmp_cron_file << "# S3log job #{@jobname}\n#{line}" unless included
       tmp_cron_file.fsync
       if system("crontab #{tmp_cron_file.path}")
-        S3log::Log.info "[update] crontab updated."
+        S3log::Log.info "#{@jobname} [update] crontab updated."
       else
-        S3log::Log.warn "[fail] Couldn't write crontab."
+        S3log::Log.warn "#{@jobname} [fail] Couldn't write crontab."
         tmp_cron_file.close!
         exit(1)
       end

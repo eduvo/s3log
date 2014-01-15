@@ -12,6 +12,7 @@ module S3log
       )
       @bucket = @s3.buckets[@config['bucket']]
       @prefix = @config['prefix']
+      @jobname = @config['jobname']
       @logdir = @config['logdir']
       FileUtils.mkdir(@logdir) unless Dir.exists? @logdir
       S3log::Log.set_logger(File.join(@logdir, 's3log.log'), @config['loglevel'])
@@ -30,7 +31,7 @@ module S3log
     def download
       if items.size > 0
         time = Time.now
-        S3log::Log.info "Downloading #{items.size} file."
+        S3log::Log.info "#{@jobname} Downloading #{items.size} file."
         File.open(@config['outputfile'], 'a+') do |f|
           items.each do |i|
             f.puts @bucket.objects[i].read
@@ -38,7 +39,7 @@ module S3log
             @bucket.objects[i].delete
           end
         end
-        S3log::Log.info "... done in #{Time.now - time}s."
+        S3log::Log.info "#{@jobname} ... done in #{Time.now - time}s."
       else
         S3log::Log.debug "No file to download."
       end
