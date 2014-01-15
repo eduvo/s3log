@@ -28,13 +28,14 @@ module S3log
     end
 
     def download
-      time = Time.now
       if items.size > 0
+        time = Time.now
         S3log::Log.info "Downloading #{items.size} file."
         File.open(@config['outputfile'], 'a+') do |f|
           items.each do |i|
             f.puts @bucket.objects[i].read
             S3log::Log.debug "    #{i} added."
+            @bucket.objects[i].delete
           end
         end
         S3log::Log.info "... done in #{Time.now - time}s."

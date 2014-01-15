@@ -41,12 +41,10 @@ module S3log
       @s3log.download
     end
 
-    desc "agglomerate", "Gather daily logs in a single file."
-    def agglomerate
-    end
-
     desc "schedule", "Install cronjob for S3 logs download and agglomeration."
     def schedule
+      @cron = S3log::Cron.new(options[:configfile])
+      @cron.update
     end
 
   end

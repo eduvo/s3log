@@ -6,6 +6,8 @@ On S3 buckets you can activate logging, but the options are quite limited. You c
 
 S3log script is intended to transform this logging in a unified logfile wherever you need it, removing the logfiles from the logging bucket when they are downloaded.
 
+It's designed to run on debian/ubuntu servers but should work on any linux server, and it also work on mac osx.
+
 (work in progress, not ready for use yet).
 
 ## Installation
@@ -20,7 +22,30 @@ S3log script is intended to transform this logging in a unified logfile wherever
 
 ## Usage
 
-TODO: Write usage instructions here
+First you need to edit the config.yml file. The purpose is to have one config file per bucket you want to retrieve, so you can create as many config files as you need.
+
+* jobname: the unique identifier for that job
+* awspublic: the AWS access key
+* awsprivate: the AWS secret key id
+* bucket: the name of the bucket, with no s3:// prefix
+* prefix: the path and prefix the same way you specified it in the logging setup
+* logdir: the local dir where s3log logs are kept
+* loglevel: the level of logging. use warn for only error display, info to record info on operations, debug to have much more details
+* outputfile: the faile where the downloaded logs are going to be appended
+* schedule: the cron formatted frequency of downloading the logs from bucket ie. `0/5 * * * *`
+
+When your configuration is ready, veridy that it works with
+
+    s3log list
+    s3log -c another_config.yml schecule
+
+Then you can update the user crontab for each config file.
+
+    s3log schedule
+    s3log -c another_config.yml schedule
+
+The `schedule` command will update the user crontab, that you can verify with `crontab -l`.
+In all s3log commands if you don't specify the config file with `-c`, it will use `config.yml`.
 
 ## Contributing
 
@@ -29,3 +54,11 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## author
+
+* mose
+
+## License
+
+Copyright (c) 2014 Faria Systems Inc. distributed under MIT license

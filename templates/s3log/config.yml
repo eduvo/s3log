@@ -1,4 +1,5 @@
 ---
+jobname: job
 awspublic: xxx
 awsprivate: xxx
 bucket: bucketname # no s3:// prefix, just the name
@@ -6,3 +7,4 @@ prefix: "somedir/prefix_" # the same as prefix stated in logging interface for t
 logdir: logs
 loglevel: info
 outputfile: s3.log
+schedule: "0/5 * * * *"
