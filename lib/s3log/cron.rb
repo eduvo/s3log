@@ -13,7 +13,7 @@ module S3log
     end
 
     def update
-      line = "#{@schedule} cd #{@path} && bash -l -c 'bundle exec s3log download -c #{@configfile} >> /dev/null 2>&1' # s3log_#{@jobname}\n"
+      line = "#{@schedule} bash -l -c 'cd #{@path} && bundle exec s3log download -c #{@configfile} >> /dev/null 2>&1' # s3log_#{@jobname}\n"
       tmp_cron_file = Tempfile.open('tmp_cron')
       included = false
       existing.each_line do |l|

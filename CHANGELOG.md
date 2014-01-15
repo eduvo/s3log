@@ -3,6 +3,8 @@ S3log Changelog
 
 ### v0.0.3 - wip
 
+* refix on crontab scheduling
+
 ### v0.0.2 - 2014-01-15
 
 * fix on schedule command to generate a valid command
