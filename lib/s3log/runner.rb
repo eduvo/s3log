@@ -41,7 +41,7 @@ module S3log
         end
         S3log::Log.info "#{@jobname} ... done in #{Time.now - time}s."
       else
-        S3log::Log.debug "No file to download."
+        S3log::Log.debug "#{@jobname} No file to download."
       end
     end
 
