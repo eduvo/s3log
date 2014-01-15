@@ -21,9 +21,14 @@ module S3log
       directory "s3log", name
     end
 
+    desc "status", "Checks how many log files are waiting on the S3 bucket."
+    def download
+      @s3log = S3log::Runner.new(options[:configfile])
+    end
+
     desc "download", "Downloads and delete logs from the logging S3 bucket."
     def download
-      @s3log = S3log.new(configfile)
+      @s3log = S3log::Runner.new(options[:configfile])
     end
 
     desc "agglomerate", "Gather daily logs in a single file."
