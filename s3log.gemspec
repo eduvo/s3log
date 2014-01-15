@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = S3log::VERSION
   spec.authors       = ["mose"]
   spec.email         = ["mose@mose.com"]
-  spec.description   = %q{Downloader for aws S3 logs and agglomerator.}
-  spec.summary       = %q{Downloader for aws S3 logs and agglomerator.}
+  spec.description   = %q{Downloader for aws S3 logs.}
+  spec.summary       = %q{Downloader for aws S3 logs, scheduler agglomerator.}
   spec.homepage      = "https://github.com/eduvo/s3log"
   spec.license       = "MIT"
 
