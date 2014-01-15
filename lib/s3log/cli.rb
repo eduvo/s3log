@@ -22,7 +22,7 @@ module S3log
     end
 
     desc "status", "Checks how many log files are waiting on the S3 bucket."
-    def download
+    def status
       @s3log = S3log::Runner.new(options[:configfile])
     end
 
