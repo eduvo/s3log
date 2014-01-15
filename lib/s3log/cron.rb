@@ -13,7 +13,7 @@ module S3log
     end
 
     def update
-      line = "#{@schedule} cd #{@path} && bash -l -c 'bundle exec s3log -c #{@configfile} download >> /dev/null 2>&1' # s3log_#{@jobname}\n"
+      line = "#{@schedule} cd #{@path} && bash -l -c 'bundle exec s3log download -c #{@configfile} >> /dev/null 2>&1' # s3log_#{@jobname}\n"
       tmp_cron_file = Tempfile.open('tmp_cron')
       included = false
       existing.each_line do |l|
@@ -24,7 +24,7 @@ module S3log
           tmp_cron_file << l
         end
       end
-      tmp_cron_file << line unless included
+      tmp_cron_file << "# S3log job #{@jobname}\n#{line}" unless included
       tmp_cron_file.fsync
       if system("crontab #{tmp_cron_file.path}")
         S3log::Log.info "[update] crontab updated."
