@@ -18,3 +18,4 @@ _yardoc
 doc/
 
 .ruby-version
+vendor/

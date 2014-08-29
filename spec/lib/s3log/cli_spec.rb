@@ -21,7 +21,7 @@ describe S3log::Cli do
   end
 
   it "init creates a working directory" do
-    expect(File.file? 'config.yml').to be_true
+    expect(File.file? 'config.yml').to be_truthy
   end
 
 end
